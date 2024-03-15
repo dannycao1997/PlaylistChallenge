@@ -23,12 +23,13 @@ public class Music { // class name = Music
     }
 
     public Integer selection(Integer startIndex, String selection) { // methods//
+        int n = playList.length; // playlist array
+        int targetIndex = -1; // target song or index in playlist array
 
-        for (int i = 0; i < playList.length; i++)
-    }
-            int up = (1 - startIndex + playList.length) % playList.length;
-        int down = (startIndex - 1 + playList.length) % playList.length;
+        //Calculating the minimum number of button pressed when going "up" or "down" playlist
+        int up = (targetIndex - startIndex + n) % n;
+        int down = (startIndex - targetIndex + n) % n;
         return Math.min(up, down);
     }
 }
-}
+
